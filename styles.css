@@ -374,7 +374,12 @@ body {
 }
 
 /* ===== SECTIONS ===== */
-.section { padding: 8rem 0; }
+.section {
+    position: relative;
+    padding: 8rem 0;
+    z-index: 1;
+    overflow: hidden;
+}
 
 .container {
     max-width: 1200px;
@@ -418,6 +423,30 @@ body {
 }
 
 /* ===== PHILOSOPHY ===== */
+.philosophy {
+    position: relative;
+}
+.philosophy::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+        radial-gradient(circle at 80% 20%, rgba(14, 165, 160, 0.08) 0%, transparent 50%),
+        radial-gradient(circle at 20% 80%, rgba(20, 184, 166, 0.06) 0%, transparent 50%);
+    z-index: -2;
+    pointer-events: none;
+}
+.philosophy::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.015) 1px, transparent 1px);
+    background-size: 24px 24px;
+    z-index: -1;
+    opacity: 0.7;
+    pointer-events: none;
+}
+
 .philosophy-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -474,7 +503,27 @@ body {
 .phil-card p { color: var(--text-muted); font-size: 0.9375rem; line-height: 1.7; }
 
 /* ===== GALLERY ===== */
-.gallery { background: var(--bg-light); }
+.gallery {
+    background: var(--bg-light);
+    position: relative;
+}
+.gallery::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 50% -20%, rgba(14, 165, 160, 0.12) 0%, transparent 60%);
+    z-index: -2;
+    pointer-events: none;
+}
+.gallery::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0; right: 0;
+    height: 120px;
+    background: linear-gradient(to top, var(--bg), transparent);
+    z-index: -1;
+    pointer-events: none;
+}
 
 .gallery-grid {
     display: grid;
@@ -537,7 +586,22 @@ body {
 }
 
 /* ===== STATS ===== */
-.stats { padding: 5rem 0; }
+.stats {
+    position: relative;
+    padding: 5rem 0;
+    z-index: 1;
+    overflow: hidden;
+}
+.stats::before {
+    content: '';
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+    width: 600px; height: 600px;
+    background: radial-gradient(circle, rgba(20, 184, 166, 0.05) 0%, transparent 70%);
+    z-index: -2;
+    pointer-events: none;
+}
 
 .stats-grid {
     display: grid;
@@ -572,6 +636,29 @@ body {
 }
 
 /* ===== SERVICES ===== */
+.services {
+    position: relative;
+}
+.services::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: 
+        radial-gradient(circle at 15% 35%, rgba(14, 165, 160, 0.06) 0%, transparent 45%),
+        radial-gradient(circle at 85% 65%, rgba(20, 184, 166, 0.06) 0%, transparent 45%);
+    z-index: -2;
+    pointer-events: none;
+}
+.services::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: linear-gradient(rgba(255,255,255,0.008) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.008) 1px, transparent 1px);
+    background-size: 80px 80px;
+    z-index: -1;
+    pointer-events: none;
+}
+
 .services-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -629,7 +716,23 @@ body {
 .service-link:hover { gap: 0.75rem; }
 
 /* ===== QUOTE ===== */
-.quote { padding: 6rem 0; }
+.quote {
+    position: relative;
+    padding: 6rem 0;
+    z-index: 1;
+    overflow: hidden;
+}
+.quote::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: 
+        radial-gradient(circle at 50% 50%, rgba(14, 165, 160, 0.06) 0%, transparent 60%),
+        radial-gradient(circle at 10% 20%, rgba(20, 184, 166, 0.03) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, rgba(14, 165, 160, 0.03) 0%, transparent 40%);
+    z-index: -2;
+    pointer-events: none;
+}
 
 .quote-box {
     max-width: 800px;
@@ -665,7 +768,30 @@ body {
 }
 
 /* ===== CONTACT ===== */
-.contact { background: var(--bg-light); }
+.contact {
+    position: relative;
+    background: var(--bg-light);
+    z-index: 1;
+    overflow: hidden;
+}
+.contact::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(circle at 85% 85%, rgba(14, 165, 160, 0.1) 0%, transparent 50%);
+    z-index: -2;
+    pointer-events: none;
+}
+.contact::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(rgba(255, 255, 255, 0.008) 1.5px, transparent 1.5px);
+    background-size: 32px 32px;
+    z-index: -1;
+    opacity: 0.8;
+    pointer-events: none;
+}
 
 .contact-grid {
     display: grid;
