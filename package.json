@@ -1,0 +1,12 @@
+{
+  "name": "aqua-store-2.0",
+  "version": "1.0.0",
+  "description": "Aqua Store 2.0 website",
+  "scripts": {
+    "dev": "http-server -p 8080 -o"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "http-server": "^14.1.1"
+  }
+}
