@@ -3,300 +3,35 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaVerse — Nature Aquarium Experience</title>
+    <title>AquaVerse — Immersive Ocean Experience</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="scroll-progress" id="scrollProgress"></div>
-
+    <!-- Top Navigation Bar -->
     <nav class="nav" id="navbar">
         <div class="nav-container">
             <a href="#" class="logo">
-                <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/><path d="M12 20c0-6 4-10 8-10s8 4 8 10-4 10-8 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="20" cy="20" r="3" fill="currentColor"/></svg>
+                <svg viewBox="0 0 40 40" fill="none">
+                    <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
+                    <path d="M12 20c0-6 4-10 8-10s8 4 8 10-4 10-8 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="20" cy="20" r="3" fill="currentColor"/>
+                </svg>
                 <span>AquaVerse</span>
             </a>
             <div class="nav-links" id="navLinks">
-                <a href="#philosophy">Philosophy</a>
-                <a href="#gallery">Gallery</a>
-                <a href="#services">Services</a>
-                <a href="#contact" class="nav-cta">Visit Us</a>
+                <a href="#surface">Surface</a>
+                <a href="#deeptrench">Deep Trench</a>
+                <a href="#midnight">Midnight</a>
             </div>
-            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
         </div>
     </nav>
 
+    <!-- Fullscreen Hero Showcase -->
     <header class="hero" id="hero">
-        <div class="hero-bg" id="heroBg" style="background-image: url('https://images.unsplash.com/photo-1551244072-5d12893278ab?w=1920&h=1080&fit=crop');"></div>
-        <div class="hero-vignette"></div>
-        <canvas id="heroCanvas"></canvas>
-        <div class="hero-overlay"></div>
-        <div class="hero-content">
-            <p class="hero-label">Discover the Depths</p>
-            <h1 class="hero-title">
-                <span>Where Nature</span>
-                <span>Meets Art</span>
-            </h1>
-            <p class="hero-desc">Immerse yourself in the world's most breathtaking nature aquariums. Experience living ecosystems that soothe the soul and inspire the mind.</p>
-            <div class="hero-actions">
-                <a href="#gallery" class="btn btn-primary">Explore Gallery</a>
-                <a href="#philosophy" class="btn btn-outline">Learn More</a>
-            </div>
-        </div>
-        <div class="scroll-indicator">
-            <div class="scroll-mouse"><div class="scroll-wheel"></div></div>
-        </div>
-    <div class="hero-wave">
-        <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-            <path d="M0,60 C360,120 1080,0 1440,60 L1440,120 L0,120 Z" fill="#0a0f14"/>
-        </svg>
-    </div>
+        <div class="hero-bg" style="background-image: url('top_islend.jpeg');"></div>
     </header>
-
-    <section class="section philosophy" id="philosophy">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Our Philosophy</span>
-                <h2 class="section-title">Learn from Nature</h2>
-                <p class="section-subtitle">Inspired by the vision of Takashi Amano, we create harmonious ecosystems that bridge the gap between natural beauty and human creativity.</p>
-            </div>
-            <div class="philosophy-grid">
-                <div class="phil-card" data-animate>
-                    <div class="phil-icon">
-                        <svg viewBox="0 0 48 48" fill="none"><path d="M24 4C12 4 4 14 4 24s8 16 20 16 20-10 20-20S36 4 24 4z" stroke="currentColor" stroke-width="2"/><path d="M24 12v8l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                    </div>
-                    <h3>Ecosystem Balance</h3>
-                    <p>Every element in our aquariums is carefully balanced — flora, fauna, light, and water chemistry work in perfect harmony.</p>
-                </div>
-                <div class="phil-card" data-animate>
-                    <div class="phil-icon">
-                        <svg viewBox="0 0 48 48" fill="none"><path d="M24 4l6 12h12l-10 8 4 12-12-8-12 8 4-12-10-8h12z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
-                    </div>
-                    <h3>Iwagumi Mastery</h3>
-                    <p>The art of stone arrangement reflecting Japanese spirituality and the pursuit of minimalist beauty in nature.</p>
-                </div>
-                <div class="phil-card" data-animate>
-                    <div class="phil-icon">
-                        <svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2"/><path d="M24 16v8l6 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
-                    </div>
-                    <h3>Living Artworks</h3>
-                    <p>Each aquarium is an ever-changing masterpiece — a living canvas that evolves, grows, and breathes with time.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section gallery" id="gallery">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Gallery</span>
-                <h2 class="section-title">Underwater Worlds</h2>
-            </div>
-            <div class="gallery-grid">
-                <div class="gallery-item large" data-animate>
-                    <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=800&h=600&fit=crop" alt="Nature Aquarium" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span class="gallery-tag">Iwagumi</span>
-                        <h3>Serene Stone Garden</h3>
-                    </div>
-                </div>
-                <div class="gallery-item" data-animate>
-                    <img src="https://images.unsplash.com/photo-1520302630591-ffe9524458e3?w=600&h=400&fit=crop" alt="Tropical Aquarium" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span class="gallery-tag">Amazon</span>
-                        <h3>Rainforest Depths</h3>
-                    </div>
-                </div>
-                <div class="gallery-item" data-animate>
-                    <img src="https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=600&h=400&fit=crop" alt="Coral Reef" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span class="gallery-tag">Reef</span>
-                        <h3>Coral Paradise</h3>
-                    </div>
-                </div>
-                <div class="gallery-item" data-animate>
-                    <img src="https://images.unsplash.com/photo-1571752726703-4e709b801240?w=600&h=400&fit=crop" alt="Planted Tank" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span class="gallery-tag">Nature</span>
-                        <h3>Forest Floor</h3>
-                    </div>
-                </div>
-                <div class="gallery-item" data-animate>
-                    <img src="https://images.unsplash.com/photo-1551524559-8af4e6624178?w=600&h=400&fit=crop" alt="Koi Pond" loading="lazy">
-                    <div class="gallery-overlay">
-                        <span class="gallery-tag">Pond</span>
-                        <h3>Koi Sanctuary</h3>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section stats">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item" data-animate>
-                    <span class="stat-number" data-count="200">0</span><span class="stat-suffix">+</span>
-                    <span class="stat-label">Aquariums Built</span>
-                </div>
-                <div class="stat-item" data-animate>
-                    <span class="stat-number" data-count="15">0</span>
-                    <span class="stat-label">Years Experience</span>
-                </div>
-                <div class="stat-item" data-animate>
-                    <span class="stat-number" data-count="50">0</span><span class="stat-suffix">+</span>
-                    <span class="stat-label">Species Cared</span>
-                </div>
-                <div class="stat-item" data-animate>
-                    <span class="stat-number" data-count="98">0</span><span class="stat-suffix">%</span>
-                    <span class="stat-label">Client Satisfaction</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section services" id="services">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Services</span>
-                <h2 class="section-title">What We Offer</h2>
-            </div>
-            <div class="services-grid">
-                <div class="service-card" data-animate>
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1535591273668-578e31182c4f?w=500&h=350&fit=crop" alt="Design">
-                    </div>
-                    <div class="service-content">
-                        <h3>Custom Design</h3>
-                        <p>From concept to completion, we design bespoke aquariums tailored to your space and vision.</p>
-                        <a href="#contact" class="service-link">Enquire <span>&#8594;</span></a>
-                    </div>
-                </div>
-                <div class="service-card" data-animate>
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1544551763-46a013bb70d5?w=500&h=350&fit=crop" alt="Installation">
-                    </div>
-                    <div class="service-content">
-                        <h3>Installation</h3>
-                        <p>Expert installation with precision engineering, ensuring ecosystem stability from day one.</p>
-                        <a href="#contact" class="service-link">Enquire <span>&#8594;</span></a>
-                    </div>
-                </div>
-                <div class="service-card" data-animate>
-                    <div class="service-img">
-                        <img src="https://images.unsplash.com/photo-1520302630591-ffe9524458e3?w=500&h=350&fit=crop" alt="Maintenance">
-                    </div>
-                    <div class="service-content">
-                        <h3>Maintenance</h3>
-                        <p>Ongoing care programs to keep your aquatic ecosystem thriving with optimal health and beauty.</p>
-                        <a href="#contact" class="service-link">Enquire <span>&#8594;</span></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section quote">
-        <div class="container">
-            <div class="quote-box" data-animate>
-                <svg class="quote-icon" viewBox="0 0 48 48" fill="currentColor"><path d="M14 24c-3.3 0-6-2.7-6-6s2.7-6 6-6c.6 0 1.2.1 1.8.2C14.8 7.3 11.1 4 7 4v4c3.3 0 6 2.7 6 6v10h-6v8h12v-8zm20 0c-3.3 0-6-2.7-6-6s2.7-6 6-6c.6 0 1.2.1 1.8.2C34.8 7.3 31.1 4 27 4v4c3.3 0 6 2.7 6 6v10h-6v8h12v-8z"/></svg>
-                <blockquote>"If you try to look, nature opens up for you."</blockquote>
-                <cite>— Takashi Amano</cite>
-            </div>
-        </div>
-    </section>
-
-    <section class="section contact" id="contact">
-        <div class="container">
-            <div class="contact-grid">
-                <div class="contact-info" data-animate>
-                    <span class="section-tag">Get in Touch</span>
-                    <h2 class="section-title">Start Your Aquarium Journey</h2>
-                    <p>Ready to bring nature into your space? Let's discuss your vision and create something extraordinary together.</p>
-                    <div class="contact-details">
-                        <div class="contact-row">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
-                            <span>Bangalore, India</span>
-                        </div>
-                        <div class="contact-row">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><path d="M22 6l-10 7L2 6"/></svg>
-                            <span>hello@aquverse.in</span>
-                        </div>
-                        <div class="contact-row">
-                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
-                            <span>+91 98765 43210</span>
-                        </div>
-                    </div>
-                </div>
-                <form class="contact-form" data-animate id="contactForm">
-                    <div class="form-group">
-                        <input type="text" id="name" required placeholder=" ">
-                        <label for="name">Your Name</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" required placeholder=" ">
-                        <label for="email">Email Address</label>
-                    </div>
-                    <div class="form-group">
-                        <select id="service" required>
-                            <option value="" disabled selected>Select Service</option>
-                            <option value="design">Custom Design</option>
-                            <option value="installation">Installation</option>
-                            <option value="maintenance">Maintenance</option>
-                            <option value="consultation">Consultation</option>
-                        </select>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" rows="4" required placeholder=" "></textarea>
-                        <label for="message">Tell us about your project</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-full">Send Message</button>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-grid">
-                <div class="footer-brand">
-                    <a href="#" class="logo">
-                        <svg viewBox="0 0 40 40" fill="none"><circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/><path d="M12 20c0-6 4-10 8-10s8 4 8 10-4 10-8 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="20" cy="20" r="3" fill="currentColor"/></svg>
-                        <span>AquaVerse</span>
-                    </a>
-                    <p>Bringing the tranquility of nature into your everyday spaces through living aquatic art.</p>
-                </div>
-                <div class="footer-links">
-                    <h4>Explore</h4>
-                    <a href="#philosophy">Philosophy</a>
-                    <a href="#gallery">Gallery</a>
-                    <a href="#services">Services</a>
-                    <a href="#contact">Contact</a>
-                </div>
-                <div class="footer-links">
-                    <h4>Services</h4>
-                    <a href="#">Custom Design</a>
-                    <a href="#">Installation</a>
-                    <a href="#">Maintenance</a>
-                    <a href="#">ADA Products</a>
-                </div>
-                <div class="footer-social">
-                    <h4>Connect</h4>
-                    <div class="social-icons">
-                        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/></svg></a>
-                        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-                        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zM9 16V8l8 3.993L9 16z"/></svg></a>
-                    </div>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>AquaVerse. Inspired by Nature Aquarium philosophy.</p>
-            </div>
-        </div>
-    </footer>
 
     <script src="script.js"></script>
 </body>
