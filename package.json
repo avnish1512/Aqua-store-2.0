@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "http-server -p 8081 -o"
   },
-  "dependencies": {},
+  "dependencies": {
+    "framer-motion": "^12.40.0"
+  },
   "devDependencies": {
     "http-server": "^14.1.1"
   }

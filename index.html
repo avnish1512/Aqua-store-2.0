@@ -3,16 +3,23 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AquaVerse — Immersive Ocean Experience</title>
+    <title>AquaVerse — Immersive Ocean Expeditions & Equipment</title>
+    <meta name="description" content="Descend into the deep blue with AquaVerse. Book immersive reef snorkeling, bioluminescent tours, and deep ocean trench expeditions. Purchase premium diving gear and support marine conservation.">
+    <meta name="keywords" content="ocean expedition, deep sea, scuba gear, marine conservation, Mariana Trench, scuba diving, bioluminescence">
+    
+    <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+
     <!-- Top Navigation Bar -->
     <nav class="nav" id="navbar">
         <div class="nav-container">
-            <a href="#" class="logo">
+            <a href="#" class="logo" id="logoLink">
                 <svg viewBox="0 0 40 40" fill="none">
                     <circle cx="20" cy="20" r="18" stroke="currentColor" stroke-width="2"/>
                     <path d="M12 20c0-6 4-10 8-10s8 4 8 10-4 10-8 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
@@ -20,19 +27,303 @@
                 </svg>
                 <span>AquaVerse</span>
             </a>
+            
             <div class="nav-links" id="navLinks">
-                <a href="#surface">Surface</a>
-                <a href="#deeptrench">Deep Trench</a>
-                <a href="#midnight">Midnight</a>
+                <a href="#hero" class="active" id="navHero">Surface</a>
+                <a href="#surface" id="navSurface">Sunlight Zone</a>
+                <a href="#midnight" id="navMidnight">Midnight Zone</a>
+                <a href="#deeptrench" id="navDeeptrench">Deep Trench</a>
+            </div>
+
+            <div class="nav-right">
+                <!-- Ambient sound player toggle -->
+                <button class="audio-toggle-btn" id="audioToggleBtn" title="Toggle Ambient Ocean Sounds">
+                    <div class="sound-wave">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                    </div>
+                    <span>Ambient ON</span>
+                </button>
+
+                <!-- Floating Cart Button -->
+                <button class="cart-toggle-btn" id="cartToggleBtn" title="Open Booking Cart">
+                    <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24">
+                        <path d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                    <span class="cart-count" id="cartCount">0</span>
+                </button>
             </div>
         </div>
     </nav>
 
-    <!-- Fullscreen Hero Showcase -->
+    <!-- Fullscreen Hero Section -->
     <header class="hero" id="hero">
-        <div class="hero-bg" style="background-image: url('top_islend.jpeg');"></div>
+        <div class="hero-bg" id="heroBg" style="background-image: url('top_islend.jpeg');"></div>
+        <div class="hero-overlay"></div>
+        <div class="bubble-container" id="heroBubbles"></div>
+        
+        <div class="hero-content reveal reveal-up">
+            <span class="hero-tagline">AquaVerse Store & Voyages</span>
+            <h1 class="hero-title">Descend Into The Unknown</h1>
+            <p class="hero-description">Embark on interactive, multi-depth ocean journeys, secure world-class diving gear, and sponsor deep-sea exploration.</p>
+            <a href="#surface" class="hero-btn" id="exploreBtn">Begin Descent</a>
+        </div>
+
+        <div class="scroll-indicator">
+            <span></span>
+            Scroll to Dive
+        </div>
     </header>
 
+    <main>
+        <!-- Sunlight Zone (Surface & Coral Reef) -->
+        <section class="ocean-zone" id="surface">
+            <div class="zone-bg" id="surfaceBg" style="background-image: url('secound_ocean.jpeg');"></div>
+            <div class="zone-overlay"></div>
+            <div class="bubble-container" id="surfaceBubbles"></div>
+            
+            <div class="zone-container">
+                <div class="zone-header reveal reveal-left">
+                    <span class="zone-depth-tag">Depth: 0m — 200m</span>
+                    <h2 class="zone-title">The Sunlight Zone</h2>
+                    <p class="zone-desc">The ocean's surface layer is filled with warmth and light, sustaining vibrant coral reefs, schools of colorful fish, and marine mammals. Perfect for leisurely swimming and standard scuba exploration.</p>
+                </div>
+
+                <div class="product-grid">
+                    <!-- Coral Reef Snorkeling -->
+                    <article class="product-card reveal reveal-up delay-1">
+                        <div>
+                            <span class="product-type">Expedition Tour</span>
+                            <h3 class="product-title">Coral Reef Snorkeling</h3>
+                            <div class="product-spec">
+                                <span>Depth: 5m</span>
+                                <span>Duration: 4 Hours</span>
+                            </div>
+                            <p class="product-description">Guided snorkeling adventure through protected coral sanctuaries. Includes luxury catamaran transport, dynamic marine biology guides, and gear rental.</p>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">$150 <span>/ guest</span></div>
+                            <button class="add-to-cart-btn" data-id="reef-snorkeling" data-title="Coral Reef Snorkeling" data-price="150">Book Now</button>
+                        </div>
+                    </article>
+
+                    <!-- Luxury Yacht Charter -->
+                    <article class="product-card reveal reveal-up delay-2">
+                        <div>
+                            <span class="product-type">Private Charter</span>
+                            <h3 class="product-title">Luxury Yacht Day Charter</h3>
+                            <div class="product-spec">
+                                <span>Depth: Surface</span>
+                                <span>Duration: Full Day</span>
+                            </div>
+                            <p class="product-description">Command a premium 80-foot sailing catamaran with a private chef, open bar, jet-skis, and deep-sea fishing equipment on board.</p>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">$1,200 <span>/ charter</span></div>
+                            <button class="add-to-cart-btn" data-id="yacht-charter" data-title="Yacht Day Charter" data-price="1200">Book Now</button>
+                        </div>
+                    </article>
+
+                    <!-- Pro Snorkel Set -->
+                    <article class="product-card reveal reveal-up delay-3">
+                        <div>
+                            <span class="product-type">Premium Gear</span>
+                            <h3 class="product-title">AquaPro Snorkel Set</h3>
+                            <div class="product-spec">
+                                <span>Rating: Professional</span>
+                                <span>Warranty: 2 Years</span>
+                            </div>
+                            <p class="product-description">Anti-fog tempered glass panoramic mask with a dry-top snorkel tube, flexible silicon fit, and lightweight high-propulsion travel fins.</p>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">$89 <span>/ unit</span></div>
+                            <button class="add-to-cart-btn" data-id="snorkel-set" data-title="AquaPro Snorkel Set" data-price="89">Buy Gear</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Midnight Zone (Twilight & Bioluminescence) -->
+        <section class="ocean-zone" id="midnight">
+            <div class="zone-bg" id="midnightBg" style="background-image: url('third_ocean.jpeg');"></div>
+            <div class="zone-overlay"></div>
+            <div class="bubble-container" id="midnightBubbles"></div>
+
+            <div class="zone-container">
+                <div class="zone-header reveal reveal-right">
+                    <span class="zone-depth-tag">Depth: 1,000m — 4,000m</span>
+                    <h2 class="zone-title">The Midnight Zone</h2>
+                    <p class="zone-desc">A mysterious, freezing-cold region of total darkness. The only luminescence is generated biologically by strange species adapted to withstand extreme barometric forces.</p>
+                </div>
+
+                <div class="product-grid">
+                    <!-- Bioluminescent Night Dive -->
+                    <article class="product-card reveal reveal-up delay-1">
+                        <div>
+                            <span class="product-type">Expedition Tour</span>
+                            <h3 class="product-title">Bioluminescent Night Dive</h3>
+                            <div class="product-spec">
+                                <span>Depth: 25m</span>
+                                <span>Duration: 3 Hours</span>
+                            </div>
+                            <p class="product-description">A surreal guided night-dive experience during seasonal plankton blooms. Witness the underwater world glow electric blue with every stroke.</p>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">$450 <span>/ guest</span></div>
+                            <button class="add-to-cart-btn" data-id="night-dive" data-title="Bioluminescent Night Dive" data-price="450">Book Now</button>
+                        </div>
+                    </article>
+
+                    <!-- Submersible Tour -->
+                    <article class="product-card reveal reveal-up delay-2">
+                        <div>
+                            <span class="product-type">Submersible Tour</span>
+                            <h3 class="product-title">Twilight Submersible Tour</h3>
+                            <div class="product-spec">
+                                <span>Depth: 1,500m</span>
+                                <span>Duration: 6 Hours</span>
+                            </div>
+                            <p class="product-description">Descend in our custom pressurized Triton submarine deep into the twilight layer to observe bioluminescent creatures through massive acrylic sphere windows.</p>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">$3,500 <span>/ guest</span></div>
+                            <button class="add-to-cart-btn" data-id="submersible-tour" data-title="Twilight Submersible Tour" data-price="3500">Book Now</button>
+                        </div>
+                    </article>
+
+                    <!-- Deep Torch -->
+                    <article class="product-card reveal reveal-up delay-3">
+                        <div>
+                            <span class="product-type">Professional Gear</span>
+                            <h3 class="product-title">Apex Luminous Dive Torch</h3>
+                            <div class="product-spec">
+                                <span>Rating: 5,000 lumens</span>
+                                <span>Depth Limit: 3,000m</span>
+                            </div>
+                            <p class="product-description">Aircraft-grade aluminum casing offering a blinding beam. Double O-ring sealed to withstand crushing depths with magnetic slide control.</p>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">$299 <span>/ unit</span></div>
+                            <button class="add-to-cart-btn" data-id="dive-torch" data-title="Apex Luminous Dive Torch" data-price="299">Buy Gear</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- Deep Trench Zone (The Abyss) -->
+        <section class="ocean-zone" id="deeptrench">
+            <div class="zone-bg" id="deeptrenchBg" style="background-image: url('fourth_ocean.jpeg');"></div>
+            <div class="zone-overlay"></div>
+            <div class="bubble-container" id="deeptrenchBubbles"></div>
+
+            <div class="zone-container">
+                <div class="zone-header reveal reveal-left">
+                    <span class="zone-depth-tag">Depth: 4,000m — 11,000m</span>
+                    <h2 class="zone-title">The Deep Trench</h2>
+                    <p class="zone-desc">The absolute frontier of ocean exploration. Home to Mariana Trench and deep abyssal plains. Highly specialized instrumentation is required to survive the immense pressure of 1000 atmospheres.</p>
+                </div>
+
+                <div class="product-grid">
+                    <!-- Challenger Deep Expedition -->
+                    <article class="product-card reveal reveal-up delay-1">
+                        <div>
+                            <span class="product-type">Extreme Expedition</span>
+                            <h3 class="product-title">Challenger Deep Expedition</h3>
+                            <div class="product-spec">
+                                <span>Depth: 10,928m</span>
+                                <span>Duration: 12 Hours</span>
+                            </div>
+                            <p class="product-description">Secure a seat alongside researchers in a titanium-hulled deep-sea lander. Venture down to the lowest geographical point on Earth.</p>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">$125K <span>/ ticket</span></div>
+                            <button class="add-to-cart-btn" data-id="challenger-deep" data-title="Challenger Deep Ticket" data-price="125000">Book Slot</button>
+                        </div>
+                    </article>
+
+                    <!-- Abyss Research Sponsorship -->
+                    <article class="product-card reveal reveal-up delay-2">
+                        <div>
+                            <span class="product-type">Sponsorship</span>
+                            <h3 class="product-title">Abyssal Marine Research</h3>
+                            <div class="product-spec">
+                                <span>Impact: High</span>
+                                <span>Tax Status: Deductible</span>
+                            </div>
+                            <p class="product-description">Directly fund hydro-thermal vent mapping, robotic drone development, and discovery missions of novel chemotrophic abyssal lifeforms.</p>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">$5,000 <span>/ month</span></div>
+                            <button class="add-to-cart-btn" data-id="abyssal-sponsorship" data-title="Abyssal Research Sponsor" data-price="5000">Sponsor</button>
+                        </div>
+                    </article>
+
+                    <!-- Atmospheric Dive Suit -->
+                    <article class="product-card reveal reveal-up delay-3">
+                        <div>
+                            <span class="product-type">Scientific Gear</span>
+                            <h3 class="product-title">Atmospheric Exo-Dive Suit</h3>
+                            <div class="product-spec">
+                                <span>Rating: Hardshell</span>
+                                <span>Depth Limit: 6,000m</span>
+                            </div>
+                            <p class="product-description">Specialized hard-metal atmospheric diving suit (ADS) maintaining normal internal pressure. Includes oxygen rebreathers and robotic arm manipulation.</p>
+                        </div>
+                        <div class="product-footer">
+                            <div class="product-price">$85K <span>/ unit</span></div>
+                            <button class="add-to-cart-btn" data-id="exo-suit" data-title="Atmospheric Exo-Suit" data-price="85000">Order Suit</button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Sticky Vertical Depth Indicator -->
+    <aside class="depth-sidebar" id="depthSidebar">
+        <div class="depth-track">
+            <div class="depth-fill" id="depthFill"></div>
+            <div class="depth-indicator-dot" id="depthIndicatorDot"></div>
+        </div>
+        <div class="depth-number" id="depthNumber">0m</div>
+    </aside>
+
+    <!-- Slide-Out E-Commerce Drawer -->
+    <aside class="cart-drawer" id="cartDrawer">
+        <div class="cart-header">
+            <h3>Your Bookings</h3>
+            <button class="cart-close-btn" id="cartCloseBtn" aria-label="Close cart">&times;</button>
+        </div>
+        
+        <div class="cart-items" id="cartItems">
+            <!-- Items added dynamically -->
+            <p class="cart-empty-message" id="cartEmptyMessage">Your expedition itinerary is empty.</p>
+        </div>
+
+        <div class="cart-footer">
+            <div class="cart-total-row">
+                <span>Total Est:</span>
+                <span id="cartTotalVal">$0</span>
+            </div>
+            <button class="checkout-btn" id="checkoutBtn" disabled>Confirm Bookings</button>
+        </div>
+    </aside>
+
+    <!-- Cart Backdrop Overlay -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <!-- Booking Confirmation Success Modal -->
+    <div class="success-modal" id="successModal">
+        <div class="success-icon">✓</div>
+        <h3>Descent Confirmed!</h3>
+        <p>Your bookings have been logged. Details and deep-sea safety clearance guidelines have been sent to your email. Get ready to dive.</p>
+        <button class="success-close-btn" id="successCloseBtn">Prepare Gear</button>
+    </div>
+
+    <!-- Interactive script file -->
     <script src="script.js"></script>
 </body>
 </html>
